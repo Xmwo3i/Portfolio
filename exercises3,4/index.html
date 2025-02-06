@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Exercises
+        </title>
+        <script>
+            function lotteryBall() {
+                this.color = setRandomColor();
+                this.value = setRandomNumber();
+            }
+            function setRandomColor(){
+                const colors = ["white","red"]
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+            function setRandomNumber(){
+                return Math.floor(Math.random()*101)
+            }
+
+            let balls = [];
+            for (i=0 ; i<100 ; i++){
+                balls.push(new lotteryBall())
+            }
+
+            let score = 0; 
+            let collectedBalls = []
+            let resume = true;
+            while(resume){
+                input = parseInt(prompt("Enter a number between 1 to 100"))
+                if (input > 100 || input < 0 || isNaN(input)){
+                    alert("Wrong input!")
+                    continue;
+                }
+                if (collectedBalls.includes(input)) {
+                    alert("You already drew this ball! Try a different one.");
+                    continue;
+                }
+
+                collectedBalls.push(input);
+
+                let ball = balls[input]; 
+                if (ball.color === "red"){
+                    score -= ball.value;
+                    alert("You drew a red ball.You lost "+ball.value+"points.")
+                    resume = false;
+                }
+                else{
+                    score+=ball.value 
+                    alert("You drew a white ball! You acheive "+ball.value+" points." +"\nYour current score is: "+score)
+                    resume = confirm("Do you want to continue the game?");
+                }
+            }
+            alert("GAME OVER!\n Your total score is: "+score)
+        </script>
+    </head>
+    <body>
+        <h1>
+            Hello world! 
+        </h1>
+        <h2>
+            if you want to play again, refresh the page!
+        </h2>
+    </body>
+</html> 

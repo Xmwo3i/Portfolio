@@ -1,0 +1,133 @@
+<!doctype html>
+<!--
+My name is Mostafa Faghani and here is my first web page!
+-->
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>My Works</title>
+        <link href="style/style.css" rel="stylesheet">
+        <script>
+            let nav = Array.from(document.querySelectorAll("li"));
+            nav.forEach(function(it) {
+            it.onclick = function() {
+                nav.forEach(function(el) {
+                el.classList.remove("active");
+                });
+                this.classList.toggle("active");
+            };
+            });
+        </script>
+    </head>
+    <body>
+        <div id="background"></div>
+        <div id="container">
+            <div class="header">
+                <h1>
+                    Works 
+                </h1>
+                <ul class="nav">
+                    <li>
+                        <a href="index.html">Splash</a>
+                    </li>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <a href="work.html">Work</a>
+                    </li>
+                    <li>
+                        <a href="journal.html">Journal</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="content">
+
+                <div class="card">
+                    <div class="circle">
+                        <div class="nWCHFnXh">
+                            <div class="mDmWlRfJ">
+                                <div class="NwR5vwMY NIpTNQLJ"></div>
+                                <div class="NwR5vwMY A-nbsszz"></div>
+                                <div class="NwR5vwMY _3iW-RZC5"></div>
+                            </div>
+                        </div>
+                        <h2>1</h2>
+                    </div>
+                    <div class="context">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="#">Read More</a>
+                     </div>
+                </div>
+                <div class="card">
+                    <div class="circle">
+                        <div class="nWCHFnXh">
+                            <div class="mDmWlRfJ">
+                                <div class="NwR5vwMY NIpTNQLJ"></div>
+                                <div class="NwR5vwMY A-nbsszz"></div>
+                                <div class="NwR5vwMY _3iW-RZC5"></div>
+                            </div>
+                        </div>
+                        <h2>Lab 4.1 Work</h2>
+                        <div id="guess">
+                            <a href="./exercises1,2,3/index.html">Guess Number</a>
+                        </div>
+                        <div id="lottery">
+                            <a href="./exercises3,4/index.html">lottery Ball</a>
+                        </div>
+                    </div>
+                    <div class="context">
+                        <a href="#">Read More</a>
+                     </div>
+         
+                </div>
+                <div class="card">
+                    <div class="circle">
+                        <div class="nWCHFnXh">
+                            <div class="mDmWlRfJ">
+                                <div class="NwR5vwMY NIpTNQLJ"></div>
+                                <div class="NwR5vwMY A-nbsszz"></div>
+                                <div class="NwR5vwMY _3iW-RZC5"></div>
+                            </div>
+                        </div>
+                        <h2>Lab 5.1 Work</h2>
+                    </div>
+                    <div class="context">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="circle">
+                        <div class="nWCHFnXh">
+                            <div class="mDmWlRfJ">
+                                <div class="NwR5vwMY NIpTNQLJ"></div>
+                                <div class="NwR5vwMY A-nbsszz"></div>
+                                <div class="NwR5vwMY _3iW-RZC5"></div>
+                            </div>
+                        </div>
+                        <h2>4</h2>
+                    </div>
+                    <div class="context">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="#">Read More</a>
+                     </div>
+                </div> 
+
+            </div>
+            <div id="footer">
+                <footer>
+                    <div id="contact">
+                        <h2>Contact info</h2>
+                        <p>Phone: 289-698-0335 <br> Email: faghanim@mcmaster.ca</p>
+                    </div>
+                    <div id="copyright">
+                        <p>&copy; 2025 Mostafa Faghani, McMaster University. All rights reserved.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

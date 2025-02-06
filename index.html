@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+My name is Mostafa Faghani and here is my first web page!
+-->
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>My Portfolio</title>
+        <link href="style/style.css" rel="stylesheet">
+        <script>
+            let nav = Array.from(document.querySelectorAll("li"));
+            nav.forEach(function(it) {
+            it.onclick = function() {
+                nav.forEach(function(el) {
+                el.classList.remove("active");
+                });
+                this.classList.toggle("active");
+            };
+            });
+        </script>
+    </head>
+    <body>
+        <div id="background"></div>
+        <div id="container">
+            <div class="header">
+                <h1>
+                    Home
+                </h1>
+                <ul class="nav">
+                    <li>
+                        <a href="index.html">Splash</a>
+                    </li>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <a href="work.html">Work</a>
+                    </li>
+                    <li>
+                        <a href="journal.html">Journal</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="content">
+                <div id="work">
+                    <p>
+                        Here is <a href="work.html">my works</a> 
+                    </p>
+                </div>
+                <div id="journal">
+                    <p>
+                        Here you can find out about <a href="journal.html">my journal</a>
+                    </p>
+                </div>
+            </div>
+            <div id="footer">
+                <footer>
+                    <div id="contact">
+                        <h2>Contact info</h2>
+                        <p>Phone: 289-698-0335 <br> Email: faghanim@mcmaster.ca</p>
+                    </div>
+                    <div id="copyright">
+                        <p>&copy; 2025 Mostafa Faghani, McMaster University. All rights reserved.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Exercises
+        </title>
+        <script>
+            let n = parseInt(prompt("What is 23 + (-4)?"))
+            if (n==19)
+                alert ("Right! Good job!")
+            else 
+                alert("Wrong! Try harder.")
+
+            let playagain = true
+            while(playagain){
+                let x;
+                y = Math.floor(Math.random() * 201 -100) ;
+                while(y!==x){
+                    x = parseInt(prompt("Guess a number between -100 and 100"));
+                    if(y!==x)
+                        alert("wrong! try again")
+                }
+                alert("That's right, great job!")
+                playagain = confirm("Would you like playagain?")
+            }
+            alert("Goodbye! GG")
+        </script>
+    </head>
+    <body>
+        Hello world! 
+    </body>
+</html> 
