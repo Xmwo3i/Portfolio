@@ -97,6 +97,10 @@ footer p {
 #copyright{
   text-align: left;
 }
+i {
+  font-size: 25px;
+  margin: 10px;
+}
 #contact{
   text-align: center;
 }

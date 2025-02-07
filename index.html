@@ -8,7 +8,7 @@ My name is Mostafa Faghani and here is my first web page!
         <meta charset="utf-8">
         <title>My Portfolio</title>
         <link href="style/style.css" rel="stylesheet">
-        <script>
+        <script src="https://kit.fontawesome.com/d9d70dd70b.js" crossorigin="anonymous">
             let nav = Array.from(document.querySelectorAll("li"));
             nav.forEach(function(it) {
             it.onclick = function() {
@@ -59,10 +59,16 @@ My name is Mostafa Faghani and here is my first web page!
                 <footer>
                     <div id="contact">
                         <h2>Contact info</h2>
-                        <p>Phone: 289-698-0335 <br> Email: faghanim@mcmaster.ca</p>
+                        <div>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-github"></i>
+                            <i class="fa-brands fa-discord"></i>
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
                     </div>
                     <div id="copyright">
-                        <p>&copy; 2025 Mostafa Faghani, McMaster University. All rights reserved.</p>
+                        <p>&copy; 2025 Mostafa Faghani, McMaster University.</p>
                     </div>
                 </footer>
             </div>
