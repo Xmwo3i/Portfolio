@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas Test Bed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css">
+        #testCanvas {
+            background-color: silver;
+            margin: 30px;
+        }
+        body {
+            text-align: center;
+            color:silver;
+            background-color: rgb(53, 66, 29);
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            // your code here
+                
+            const c=document.getElementById("testCanvas");
+            const ctx=c.getContext("2d");
+            let houseX = 30; 
+            let lastHouseX = 30;
+            // house function
+            function house(x){
+                lastHouseX = x; 
+
+                //Chimney 
+                ctx.fillStyle = "brown";
+                ctx.fillRect(x + 65, 90, 20, 40);
+                ctx.strokeRect(x + 65, 90, 20, 40);
+
+                //House Base
+                ctx.fillStyle="bisque";
+                ctx.fillRect(x,140,100,100);
+
+                //Roof 
+                ctx.beginPath();
+                ctx.moveTo(x,140);
+                ctx.lineTo(x+ 50,90);
+                ctx.lineTo(x + 100,140);
+                ctx.closePath();
+                ctx.fillStyle = "red";
+                ctx.fill();
+                ctx.stroke();
+
+                //Door 
+                ctx.fillStyle = "#964B00";
+                ctx.fillRect(x+30,180,30,60);
+                ctx.fillStyle = "#FFBF00";
+                ctx.beginPath(); 
+                ctx.arc(x + 38 , 220 , 4 , 0 ,Math.PI * 2)
+                ctx.fill();
+
+                //Window 
+                ctx.fillStyle = "lightblue";
+                ctx.fillRect(x +60,150,30,30);
+                ctx.strokeRect(x +60, 150 ,28 ,28);
+                ctx.fillRect(x +35,190,20,20);
+                ctx.strokeRect(x + 35, 190, 20, 20);
+
+            }
+
+                //car function 
+            function car(x){
+                let carX = lastHouseX + 10;
+                //Base 
+                ctx.fillStyle = "red";
+                ctx.fillRect(carX, 320 , 150,60 ); 
+                ctx.strokeRect(carX , 320 , 150,60 ); 
+
+                //Roof 
+                ctx.beginPath()
+                ctx.moveTo(carX, 320);
+                ctx.quadraticCurveTo(carX+130, 210,carX+150 ,320);
+                ctx.moveTo(carX, 320)
+                ctx.quadraticCurveTo(carX-60,380, carX,380)
+                ctx.fillStyle = "red";
+                ctx.fill();
+                ctx.stroke();
+
+                //light
+                ctx.beginPath();
+                ctx.moveTo(carX-18,340);
+                ctx.quadraticCurveTo(carX+2,345 , carX-25, 350)
+                ctx.fillStyle ="yellow"; 
+                ctx.fill();
+                ctx.stroke()
+
+                //wheel 
+                ctx.fillStyle = "black";
+                ctx.beginPath();
+                ctx.arc(carX+30, 380, 20 , 0, Math.PI *2 );
+                ctx.arc(carX+120, 380, 20 , 0, Math.PI *2 );
+                ctx.fill();
+                ctx.fillStyle = "#515a5a";
+                ctx.beginPath()
+                ctx.arc(carX+30, 380, 12 , 0, Math.PI *2 );
+                ctx.arc(carX+120, 380, 12 , 0, Math.PI *2 );
+                ctx.fill();
+
+            }
+            
+
+            // Function to draw stars as glowing dots
+            function star() {
+                let starX = Math.random() * c.width;
+                let starY = Math.random() * 100; 
+                let starSize = Math.random() * 3 + 2; 
+                let colors = ["yellow", "white", "lightblue", "gold"];
+                let starColor = colors[Math.floor(Math.random() * colors.length)];
+
+                ctx.fillStyle = starColor;
+                ctx.beginPath();
+                ctx.arc(starX, starY, starSize, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            let button1 = document.querySelector("input[value = 'Button 1']");
+            button1.addEventListener("click",function(event){
+                let rows = 8;
+                let cols = 8; 
+                let squareSize = c.width / cols; 
+                for (let row =0 ; row < rows; row++){
+                    for (let col =0 ; col < cols; col++){
+                        if ((row+col)%2 ===0){
+                            ctx.fillStyle = "white";
+                        }
+                        else {
+                            ctx.fillStyle = "black";
+                        }
+                        ctx.fillRect (row* squareSize, col*squareSize, squareSize, squareSize);
+                    }
+                } 
+
+            });
+            let button2 = document.querySelector("input[value ='Button 2']"); 
+            button2.addEventListener("click", function(event){
+                if(houseX + 100 <= c.width){
+                    house(houseX);
+                    houseX += 120; 
+                }
+                else{
+                    alert("SOORRY:( no more space for more houses!")
+                }
+            });
+            let button3 = document.querySelector("input[value = 'Button 3']");
+            button3.addEventListener("click", function(event){
+                car();
+            })
+            let button4 = document.querySelector("input[value = 'Button 4']");
+            button4.addEventListener("click", function(event){
+                star();
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>Canvas Test Bed 4</h1>
+    <canvas id="testCanvas" width="400" height="400"></canvas>
+    <br>
+    <input type="button" value="Button 1">
+    <input type="button" value="Button 2">
+    <input type="button" value="Button 3">
+    <input type="button" value="Button 4">
+</body>
+
+</html>
